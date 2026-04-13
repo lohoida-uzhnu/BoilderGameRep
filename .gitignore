@@ -1,0 +1,72 @@
+# Build results
+bin/
+obj/
+out/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+.nuget/
+project.assets.json
+project.nuget.cache
+
+# .NET Core
+project.lock.json
+artifacts/
+
+# Avalonia specific (зазвичай не потрібно комітити кеші/збірки)
+*.g.cs
+*.g.i.cs
+
+# Publish output
+publish/
+
+# Test results
+TestResults/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Backup & temp files
+*.bak
+*.tmp
+*.temp
+
+# Rider cache
+.idea/.idea.*
+.idea/.gradle
+.idea/modules.xml
+
+# Local config
+appsettings.Development.json
+.env
+
+# Generated files
+*.AssemblyInfo.cs
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
