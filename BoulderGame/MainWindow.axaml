@@ -2,8 +2,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
         x:Class="BoulderGame.MainWindow"
-        Title="BoulderGame">
-    Welcome to Avalonia!
+        Title="MainMenu">
+    <Grid>
+        <StackPanel Margin="100"
+                    Spacing="10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top">
+            <TextBlock Text="DODGE BOULDER"
+                       FontSize="40"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Margin="150"
+                    Spacing="10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Button Content="Start Game"
+                    Click="StartGame_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    FontSize="20"
+                    Width="350"
+                    Height="60"/>
+            <Button Content="Statistic" 
+                    Click="StatButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    FontSize="20"
+                    Width="350"
+                    Height="60"/>
+            <Button Content="Exit"
+                    Click="ExitButton_Click"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    FontSize="20"
+                    Width="350"
+                    Height="60"/>
+        </StackPanel>
+        <StackPanel Margin="10"
+                    Spacing="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+            <TextBlock Text="Version: Beta 1.0"/>
+        </StackPanel>
+    </Grid>
 </Window>
