@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BoulderGame.GameScreen"
+        Title="Dodge Boulder" Height="800" Width="1000"
+        KeyDown="Window_KeyDown" 
+        KeyUp="Window_KeyUp">
+    
+    <Canvas Name="GameCanvas" Background="SkyBlue">
+        
+        <Rectangle Name="GrassLayer" 
+                   Width="1000" Height="100" 
+                   Canvas.Bottom="0" Canvas.Left="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="#4CAF50"/>
+                    <GradientStop Offset="1" Color="#1B5E20"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock Name="ScoreText" Text="Score: 0" 
+                   FontSize="24" FontWeight="Bold" 
+                   Canvas.Left="10" Canvas.Top="10" 
+                   Foreground="Black" ZIndex="100"/>
+                   
+    </Canvas>
+</Window>
