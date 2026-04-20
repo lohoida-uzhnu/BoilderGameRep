@@ -6,11 +6,31 @@
         x:Class="BoulderGame.StatWin"
         Title="GameScreen">
 
-    <Grid>
-        <TextBlock Text="Тут буде статистика!" 
-                   FontSize="60"
-                   FontWeight="Bold"
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"/>
+    <Grid RowDefinitions="*, *, 2*, Auto">
+        <StackPanel Grid.Row="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="STATISTIC" Classes="Header"/>
+            </StackPanel>
+        <StackPanel Grid.Row="1"
+                    Spacing="15"
+                    Margin="20"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal">
+            <Button Content="Sort by Score"
+                    Click="SortByScore_Click"
+                    Classes="MenuBtn"/>
+            <Button Content="Sort by Name"
+                    Click="SortByName_Click"
+                    Classes="MenuBtn"/>
+            </StackPanel>
+        <StackPanel Grid.Row="3"
+                    Margin="10"
+                    HorizontalAlignment="Center">
+            <Button Content="Back to menu"
+                    Click="BackToMenu_Click"
+                    Classes="MenuBtn"/>
+            </StackPanel>
     </Grid>
 </Window>

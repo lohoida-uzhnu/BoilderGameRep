@@ -12,5 +12,17 @@ namespace BoulderGame
         {
             InitializeComponent();
         }
+        public void SortByScore_Click(object? sender, RoutedEventArgs e)
+        {
+            // Логика сортировки по очкам
+        }
+        public void SortByName_Click(object? sender, RoutedEventArgs e)
+        {
+            // Логика сортировки по имени
+        }
+        public void BackToMenu_Click(object? sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

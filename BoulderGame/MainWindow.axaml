@@ -6,52 +6,40 @@
         MinWidth="450" MinHeight="400"
         WindowStartupLocation="CenterScreen">
 
-    <Window.Styles>
-        <Style Selector="Button.MenuBtn">
-            <Setter Property="Width" Value="350"/>
-            <Setter Property="Height" Value="60"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
-    </Window.Styles>
-
     <Grid RowDefinitions="*, 2*, Auto">
         
         <StackPanel Grid.Row="0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="DODGE BOULDER"
-                       FontSize="40"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"/>
+            <TextBlock Text="DODGE BOULDER" Classes="Header"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1"
                     Spacing="15"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top">
-            <Button Content="Start Game"
-                    Click="StartGameBut_Click"
+            <Button 
+                    Content="Start Game" 
+                    Click="StartGameBut_Click" 
                     Classes="MenuBtn"/>
-            
-            <Button Content="Statistic" 
-                    Click="StatButton_Click"
+            <Button 
+                    Content="Statistic" 
+                    Click="StatButton_Click" 
                     Classes="MenuBtn"/>
-            
-            <Button Content="Setting"
-                    Click="SettingBut_Click"
+            <Button 
+                    Content="Setting" 
+                    Click="SettingBut_Click" 
                     Classes="MenuBtn"/>
-            
-            <Button Content="Exit"
-                    Click="ExitButton_Click"
+            <Button 
+                    Content="Exit" 
+                    Click="ExitButton_Click" 
                     Classes="MenuBtn"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2"
                     Margin="10"
                     HorizontalAlignment="Left">
-            <TextBlock Text="Version: Beta 1.0"/>
+            <TextBlock Text="Version: Beta 1.0" Foreground="Gray"/>
         </StackPanel>
 
         <ContentControl Name="MainContent" IsHitTestVisible="False"/>

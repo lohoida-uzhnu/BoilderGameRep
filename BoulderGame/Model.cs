@@ -1,6 +1,6 @@
-﻿using Avalonia; // Змінено з System.Windows
+﻿using Avalonia; 
 
-namespace BoulderGame // Твій неймспейс
+namespace BoulderGame 
 {
     public class GameObject
     {

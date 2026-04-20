@@ -13,19 +13,22 @@ namespace BoulderGame
         {
             var gameW = new GameScreen();
             gameW.Show();
-            this.Close();
+            gameW.Closed += (s, args) => this.Show();
+            this.Hide();
         }
         public void StatButton_Click(object? sender, RoutedEventArgs e)
         {
             var statW = new StatWin();
+            this.Hide();
+            statW.Closed += (s, args) => this.Show();
             statW.Show();
-            this.Close();
         }
         public void SettingBut_Click(object? sender, RoutedEventArgs e)
         {
             var settingW = new SettingWin();
+            this.Hide();
+            settingW.Closed += (s, args) => this.Show();
             settingW.Show();
-            this.Close();
         }
         public void ExitButton_Click(object? sender, RoutedEventArgs e)
         {

@@ -1,12 +1,33 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="BoulderGame.SettingWin"
-        Title="Налаштування"
+        Title="Settings"
         Width="400" Height="300">
 
-    <Grid>
-        <TextBlock Text="Тут будуть налаштування" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"/>
+    <Grid RowDefinitions="*, *, *">
+       <StackPanel Grid.Row="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+           <TextBlock Text="SETTINGS" 
+                      Classes="Header"/>
+           </StackPanel>
+        <StackPanel Grid.Row="1"
+                    Spacing="15"
+                    Margin="20"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+            <ToggleSwitch Name="ThemeSwitch"
+                          Content="Application theme"
+                          OffContent="Light"
+                          OnContent="Dark"
+                          IsCheckedChanged="ThemeSwitch_IsCheckedChanged"/>
+            </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Margin="10"
+                    HorizontalAlignment="Center">
+            <Button Content="Back to menu"
+                    Click="BackToMenu_Click"
+                    Classes="MenuBtn"/>
+            </StackPanel>
     </Grid>
 </Window>
