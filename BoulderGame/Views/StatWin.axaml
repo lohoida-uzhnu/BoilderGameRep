@@ -2,15 +2,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800"
+        mc:Ignorable="d" 
+        d:DesignWidth="1000" 
+        d:DesignHeight="800"
+        CanResize="False"
         x:Class="BoulderGame.StatWin"
+        WindowStartupLocation="CenterScreen"
         Title="GameScreen">
 
     <Grid RowDefinitions="*, *, 2*, Auto">
         <StackPanel Grid.Row="0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <TextBlock Text="STATISTIC" Classes="Header"/>
+            <TextBlock Text="{DynamicResource StatTitle}" 
+                       Classes="Header"/>
             </StackPanel>
         <StackPanel Grid.Row="1"
                     Spacing="15"
@@ -18,17 +23,17 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Orientation="Horizontal">
-            <Button Content="Sort by Score"
+            <Button Content="{DynamicResource SortBS}"
                     Click="SortByScore_Click"
                     Classes="MenuBtn"/>
-            <Button Content="Sort by Name"
+            <Button Content="{DynamicResource SortBN}"
                     Click="SortByName_Click"
                     Classes="MenuBtn"/>
             </StackPanel>
         <StackPanel Grid.Row="3"
                     Margin="10"
                     HorizontalAlignment="Center">
-            <Button Content="Back to menu"
+            <Button Content="{DynamicResource BackTM}"
                     Click="BackToMenu_Click"
                     Classes="MenuBtn"/>
             </StackPanel>

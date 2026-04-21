@@ -2,13 +2,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="BoulderGame.SettingWin"
         Title="Settings"
-        Width="400" Height="300">
+        WindowStartupLocation="CenterScreen"
+        Width="400" Height="500">
 
     <Grid RowDefinitions="*, *, *">
        <StackPanel Grid.Row="0"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center">
-           <TextBlock Text="SETTINGS" 
+           <TextBlock Text="{DynamicResource SettTitle}" 
                       Classes="Header"/>
            </StackPanel>
         <StackPanel Grid.Row="1"
@@ -17,15 +18,21 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top">
             <ToggleSwitch Name="ThemeSwitch"
-                          Content="Application theme"
-                          OffContent="Light"
-                          OnContent="Dark"
+                          Content="{DynamicResource Theme}"
+                          OffContent="{DynamicResource ThemeL}"
+                          OnContent="{DynamicResource ThemeD}"
                           IsCheckedChanged="ThemeSwitch_IsCheckedChanged"/>
+            <ComboBox Name="LangComboBox" 
+          Width="168" 
+          SelectionChanged="LangComboBox_SelectionChanged">
+    <ComboBoxItem Content="English" Tag="English-US"/>
+    <ComboBoxItem Content="Українська" Tag="Ukrainian-UA"/>
+</ComboBox>
             </StackPanel>
         <StackPanel Grid.Row="2"
                     Margin="10"
                     HorizontalAlignment="Center">
-            <Button Content="Back to menu"
+            <Button Content="{DynamicResource BackTM}"
                     Click="BackToMenu_Click"
                     Classes="MenuBtn"/>
             </StackPanel>

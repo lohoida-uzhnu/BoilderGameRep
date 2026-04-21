@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="BoulderGame.AuthWindow"
+        Title="Авторизація"
+        Width="800" Height="600"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        Background="#48D1CC"> 
+        <TransitioningContentControl Name="MainContentArea">
+        <TransitioningContentControl.PageTransition>
+            <CrossFade Duration="0:0:0.3"/> 
+        </TransitioningContentControl.PageTransition>
+    </TransitioningContentControl>
+</Window>

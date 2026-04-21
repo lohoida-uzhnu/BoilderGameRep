@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:String x:Key="LoginTitle">Вхід</x:String>
+    <x:String x:Key="LoginField">Логін:</x:String>
+    <x:String x:Key="PasswordField">Пароль:</x:String>
+    <x:String x:Key="ShowPass">Показати пароль</x:String>
+    <x:String x:Key="SignInButton">УВІЙТИ</x:String>
+    <x:String x:Key="RegisterLink">Немає аккаунта? </x:String>
+    <x:String x:Key="RegisterLinkAction">Зареєструйтесь</x:String>
+    <x:String x:Key="SignUpTitle">Реєстрація</x:String>
+    <x:String x:Key="ConfPass">Підтвердіть пароль:</x:String>
+    <x:String x:Key="SignUpButton">СТВОРИТИ АККАУНТ</x:String>
+    <x:String x:Key="LoginLink">Вже є аккаунт? </x:String>
+    <x:String x:Key="LoginLinkAction">Увійти</x:String>
+
+                    <!--MainWindow-->
+    <x:String x:Key="StartGame">Почати гру</x:String>
+    <x:String x:Key="Stat">Статистика</x:String>
+    <x:String x:Key="Sett">Налаштування</x:String>
+    <x:String x:Key="Exit">Вихід</x:String>
+                   <!--Settings-->
+    <x:String x:Key="SettTitle">Налаштування</x:String>
+    <x:String x:Key="Theme">Тема:</x:String>
+    <x:String x:Key="ThemeL">Світла</x:String>
+    <x:String x:Key="ThemeD">Темна</x:String>
+    <x:String x:Key="BackTM">Назад в меню</x:String>
+                    <!--Statistics-->
+    <x:String x:Key="StatTitle">Статистика</x:String>
+    <x:String x:Key="SortBS">Сортувати за очками</x:String>
+    <x:String x:Key="SortBN">Сортувати за іменем</x:String>
+</ResourceDictionary>

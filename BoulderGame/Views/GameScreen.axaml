@@ -18,10 +18,13 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Name="ScoreText" Text="Score: 0" 
-                   FontSize="24" FontWeight="Bold" 
+        <TextBlock Name="ScoreText" 
+                   Text="Score: 0" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
                    Canvas.Left="10" Canvas.Top="10" 
-                   Foreground="Black" ZIndex="100"/>
+                   Foreground="Black" 
+                   ZIndex="100"/>
                    
     </Canvas>
 </Window>

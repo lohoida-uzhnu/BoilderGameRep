@@ -1,6 +1,6 @@
-﻿using Avalonia; 
+﻿using Avalonia;
 
-namespace BoulderGame 
+namespace BoulderGame.Model 
 {
     public class GameObject
     {
