@@ -1,5 +1,8 @@
-﻿using Avalonia.Interactivity;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Interactivity;
+using Avalonia;
+using System;
 
 namespace BoulderGame
 {
@@ -13,14 +16,12 @@ namespace BoulderGame
         {
             var gameW = new GameScreen();
             gameW.Show();
-            gameW.Closed += (s, args) => this.Show();
             this.Hide();
         }
         public void StatButton_Click(object? sender, RoutedEventArgs e)
         {
             var statW = new StatWin();
             this.Hide();
-            statW.Closed += (s, args) => this.Show();
             statW.Show();
         }
         public void SettingBut_Click(object? sender, RoutedEventArgs e)
@@ -32,7 +33,10 @@ namespace BoulderGame
         }
         public void ExitButton_Click(object? sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.Shutdown();
+            }
         }
     }
 }

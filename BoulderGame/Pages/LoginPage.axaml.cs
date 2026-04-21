@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Linq;
+using BoulderGame.Model;
 
 namespace BoulderGame;
 
@@ -33,6 +34,8 @@ public partial class LoginPage : UserControl
 
             if (user != null)
             {
+                Session.CurrentUsername = user.Login;
+
                 var gameWin = new MainWindow();
                 gameWin.Show();
                 if (this.VisualRoot is Window w) w.Close();

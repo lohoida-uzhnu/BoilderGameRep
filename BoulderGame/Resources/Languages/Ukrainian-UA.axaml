@@ -28,4 +28,9 @@
     <x:String x:Key="StatTitle">Статистика</x:String>
     <x:String x:Key="SortBS">Сортувати за очками</x:String>
     <x:String x:Key="SortBN">Сортувати за іменем</x:String>
+                    <!--GameOver-->
+    <x:String x:Key="GameOver">ГРА ЗАКІНЧЕНА</x:String>
+    <x:String x:Key="FinalScore">Очки: </x:String>
+    <x:String x:Key="TryAgain">Спробовать знову</x:String>
+    <x:String x:Key="SaveScore">Зберегти і переглянути</x:String>
 </ResourceDictionary>

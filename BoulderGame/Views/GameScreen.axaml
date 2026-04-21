@@ -3,28 +3,79 @@
         x:Class="BoulderGame.GameScreen"
         Title="Dodge Boulder" Height="800" Width="1000"
         KeyDown="Window_KeyDown" 
-        KeyUp="Window_KeyUp">
-    
-    <Canvas Name="GameCanvas" Background="SkyBlue">
-        
-        <Rectangle Name="GrassLayer" 
-                   Width="1000" Height="100" 
-                   Canvas.Bottom="0" Canvas.Left="0">
-            <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
-                    <GradientStop Offset="0" Color="#4CAF50"/>
-                    <GradientStop Offset="1" Color="#1B5E20"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+        KeyUp="Window_KeyUp"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False">
 
-        <TextBlock Name="ScoreText" 
-                   Text="Score: 0" 
-                   FontSize="24" 
-                   FontWeight="Bold" 
-                   Canvas.Left="10" Canvas.Top="10" 
-                   Foreground="Black" 
-                   ZIndex="100"/>
-                   
-    </Canvas>
+    <Grid>
+        <Canvas Name="GameCanvas" 
+                Background="SkyBlue">
+            
+            <Rectangle Name="GrassLayer" 
+                       Width="1000" 
+                       Height="100" 
+                       Canvas.Bottom="0" 
+                       Canvas.Left="0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                        <GradientStop Offset="0" Color="#4CAF50"/>
+                        <GradientStop Offset="1" Color="#1B5E20"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <TextBlock Name="ScoreText" 
+                       Text="Score: 0" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Canvas.Left="10" Canvas.Top="10" 
+                       Foreground="Black" 
+                       ZIndex="100"/>
+        </Canvas>
+
+        <Border Name="GameOverOverlay" 
+                Background="#A0000000" 
+                IsVisible="False" 
+                ZIndex="200">
+            <Border Background="{DynamicResource SystemRegionBrush}" 
+                    Padding="40" 
+                    CornerRadius="15" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    BoxShadow="0 10 30 0 #50000000">
+                <StackPanel Spacing="15" 
+                            MinWidth="250">
+                    <TextBlock Text="{DynamicResource GameOver}" 
+                               FontSize="36" 
+                               FontWeight="Bold" 
+                               Foreground="#FF4500" 
+                               HorizontalAlignment="Center"/>
+                    
+                    <TextBlock Name="FinalScoreText" 
+                               Text="Score: 0" 
+                               FontSize="24" 
+                               HorizontalAlignment="Center" 
+                               Margin="0,0,0,10"/>
+                    
+                    <Button Content="{DynamicResource TryAgain}" 
+                            Click="Restart_Click" 
+                            Classes="MenuBtn"
+                            HorizontalAlignment="Stretch" 
+                            HorizontalContentAlignment="Center"/>
+                    
+                    <Button Content="{DynamicResource SaveScore}" 
+                            Click="Stats_Click" 
+                            Classes="MenuBtn"
+                            HorizontalAlignment="Stretch" 
+                            HorizontalContentAlignment="Center"/>
+                    
+                    <Button Content="{DynamicResource BackTM}" 
+                            Click="MainMenu_Click" 
+                            Classes="MenuBtn"
+                            HorizontalAlignment="Stretch" 
+                            HorizontalContentAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Grid>
 </Window>

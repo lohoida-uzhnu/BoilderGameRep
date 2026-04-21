@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:model="using:BoulderGame.Model"
         mc:Ignorable="d" 
         d:DesignWidth="1000" 
         d:DesignHeight="800"
@@ -11,12 +12,14 @@
         Title="GameScreen">
 
     <Grid RowDefinitions="*, *, 2*, Auto">
+        
         <StackPanel Grid.Row="0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
             <TextBlock Text="{DynamicResource StatTitle}" 
                        Classes="Header"/>
-            </StackPanel>
+        </StackPanel>
+        
         <StackPanel Grid.Row="1"
                     Spacing="15"
                     Margin="20"
@@ -24,18 +27,58 @@
                     VerticalAlignment="Top"
                     Orientation="Horizontal">
             <Button Content="{DynamicResource SortBS}"
-                    Click="SortByScore_Click"
+                    Click="SortScore_Click"
                     Classes="MenuBtn"/>
             <Button Content="{DynamicResource SortBN}"
                     Click="SortByName_Click"
                     Classes="MenuBtn"/>
-            </StackPanel>
+        </StackPanel>
+
+        <Border Grid.Row="2" 
+                Margin="20,0,20,20" 
+                Background="{DynamicResource SystemRegionBrush}" 
+                CornerRadius="8" 
+                ClipToBounds="True">
+            
+            <ListBox Name="ScoreList" 
+                     Background="Transparent" 
+                     Margin="10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="model:PlayerRecord">
+                        <Grid ColumnDefinitions="50, *, Auto" 
+                              Margin="5,10">
+                            <TextBlock Grid.Column="0" 
+                                       Text="{Binding Id}" 
+                                       Margin="0,0,15,0"
+                                       FontSize="22" 
+                                       Foreground="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                                       VerticalAlignment="Center"/>
+                            
+                            <TextBlock Grid.Column="1" 
+                                       Text="{Binding Username}" 
+                                       FontSize="22" 
+                                       Foreground="{DynamicResource SystemControlForegroundAccentBrush}"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" 
+                                       Text="{Binding Score}" 
+                                       FontSize="22" 
+                                       FontWeight="Bold" 
+                                       Foreground="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                                       VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+        </Border>
+
         <StackPanel Grid.Row="3"
                     Margin="10"
                     HorizontalAlignment="Center">
             <Button Content="{DynamicResource BackTM}"
                     Click="BackToMenu_Click"
                     Classes="MenuBtn"/>
-            </StackPanel>
+        </StackPanel>
+        
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Controls;
@@ -41,12 +42,15 @@ namespace BoulderGame
 
         private void StartGame()
         {
+            GameOverOverlay.IsVisible = false;
+
             player = new Player
             {
                 Width = 40,
                 Height = 40,
                 X = GameWidth / 2 - 20,
-                Y = GameHeight - GrassHeight - 40
+                Y = GameHeight - GrassHeight - 40,
+                Speed = 7.0
             };
 
             boulders = new List<Boulder>();
@@ -54,24 +58,25 @@ namespace BoulderGame
             frameCount = 0;
             isGameOver = false;
 
-            gameTimer = new DispatcherTimer();
-            gameTimer.Interval = TimeSpan.FromMilliseconds(16);
-            gameTimer.Tick += GameLoop;
+            if (gameTimer == null)
+            {
+                gameTimer = new DispatcherTimer();
+                gameTimer.Interval = TimeSpan.FromMilliseconds(16);
+                gameTimer.Tick += GameLoop;
+            }
+
             gameTimer.Start();
         }
-
         private void GameLoop(object? sender, EventArgs e)
         {
             if (isGameOver) return;
 
             frameCount++;
-
             UpdatePlayer();
             SpawnBoulders();
-            UpdateBoulders(); 
+            UpdateBoulders();
             CheckCollisions();
-
-            UpdateUI(); 
+            UpdateUI();
         }
 
         private void UpdatePlayer()
@@ -129,7 +134,36 @@ namespace BoulderGame
         {
             isGameOver = true;
             gameTimer.Stop();
+
+            FinalScoreText.Text = $"Score: {score}";
+            GameOverOverlay.IsVisible = true;
+        }
+
+        private void Restart_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
             StartGame();
+        }
+
+        private void Stats_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var newRecord = new PlayerRecord
+            {
+                Username = Session.CurrentUsername,
+                Score = this.score
+            };
+
+            ScoreManager.SaveScore(newRecord);
+
+            var statsWin = new StatWin();
+            statsWin.Show();
+            this.Close();
+        }
+
+        private void MainMenu_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var mainWin = new MainWindow();
+            mainWin.Show();
+            this.Close();
         }
 
         private void UpdateUI()
@@ -175,6 +209,7 @@ namespace BoulderGame
 
         private void Window_KeyDown(object? sender, KeyEventArgs e)
         {
+            if (isGameOver) return;
             if (e.Key == Key.A || e.Key == Key.Left) moveLeft = true;
             if (e.Key == Key.D || e.Key == Key.Right) moveRight = true;
         }
