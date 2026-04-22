@@ -42,8 +42,8 @@
         <StackPanel Grid.Row="2"
                     Margin="10"
                     HorizontalAlignment="Left">
-            <TextBlock Text="Version: Beta 1.0" 
-                       Foreground="WHite"/>
+            <TextBlock Text="Version: Release 1.0" 
+                       Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"/>
         </StackPanel>
 
         <ContentControl Name="MainContent" IsHitTestVisible="False"/>

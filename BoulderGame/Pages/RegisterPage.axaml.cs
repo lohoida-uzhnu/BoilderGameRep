@@ -59,6 +59,14 @@ public partial class RegisterPage : UserControl
 
             return;
         }
+        else 
+        {
+            ErrorText.IsVisible = true;
+            ErrorText.Text = "Registration successful!";
+
+            var window = TopLevel.GetTopLevel(this) as AuthWindow;
+            if (window != null) window.Navigate(new LoginPage());
+        }
 
         var newUser = new User { Login = username, Password = password };
         users.Add(newUser);

@@ -22,7 +22,7 @@ namespace BoulderGame
         private int frameCount = 0;
 
         private double baseBoulderSpeed = 4.0;
-        private int spawnInterval = 5;
+        private int spawnInterval = 20;
 
         private bool moveLeft = false;
         private bool moveRight = false;
@@ -94,8 +94,8 @@ namespace BoulderGame
             {
                 Boulder newBoulder = new Boulder
                 {
-                    Width = 30,
-                    Height = 30,
+                    Width = 60,
+                    Height = 60,
                     X = random.Next(0, (int)(GameWidth - 30)),
                     Y = -30,
                     Speed = baseBoulderSpeed + (random.NextDouble() * 2)
